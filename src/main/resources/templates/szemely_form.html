@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+</head>
+<body>
+	<form action="#" th:action="@{/szemely}" th:object="${szemely}"
+		method="post">
+		<table>
+			<tr>
+				<td>Vezetéknév:</td>
+				<td><input type="text" th:field="*{firstName}" /></td>
+				<td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Vezetéknév
+					hiba</td>
+			</tr>
+			<tr>
+				<td>Keresztnév:</td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+				<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Keresztnév
+					hiba</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Új személy mentése</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

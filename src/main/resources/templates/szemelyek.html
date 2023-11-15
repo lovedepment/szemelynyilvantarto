@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+</head>
+<body>
+		<table  border="1">
+			<th>Vezetéknév</th>
+			<th>Keresztnév</th>
+			<th>Állandó lakcím </th>
+			<th>Ideiglenes lakcím</th>
+			<tr th:each="szemely : ${listSzemelyek}">				
+				<td th:text="${szemely.firstName}"></td>
+				<td th:text="${szemely.lastName}"></td>
+				<td th:text="${szemely.permanentAddress}"></td>
+				<td th:text="${szemely.residentialAddress}"></td>
+			</tr>
+		</table>
+<input type="button"  onclick="location.href='/szemely'" value="Új személy felvitele" >
+</body>
+</html>
